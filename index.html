@@ -27,24 +27,38 @@
       text-shadow: 1px 1px 5px black;
     }
 
-.deal {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 10px 0;
-  padding: 5px 10px;
-  animation: bgChange 3s infinite;
-  border-radius: 8px;
-  box-shadow: 0 0 10px black;
-  display: inline-block;
-}
+    .deal {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 10px 0;
+      padding: 5px 10px;
+      animation: bgChange 3s infinite;
+      border-radius: 8px;
+      box-shadow: 0 0 10px black;
+      display: inline-block;
+    }
 
-@keyframes bgChange {
-  0% { background-color: rgb(185, 57, 57); }
-  25% { background-color: rgb(57, 185, 57); }
-  50% { background-color: rgb(57, 57, 185); }
-  75% { background-color: rgb(185, 185, 57); }
-  100% { background-color: rgb(185, 57, 57); }
-}
+    @keyframes bgChange {
+      0% {
+        background-color: rgb(185, 57, 57);
+      }
+
+      25% {
+        background-color: rgb(57, 185, 57);
+      }
+
+      50% {
+        background-color: rgb(57, 57, 185);
+      }
+
+      75% {
+        background-color: rgb(185, 185, 57);
+      }
+
+      100% {
+        background-color: rgb(185, 57, 57);
+      }
+    }
 
     .price {
       font-size: 2rem;
@@ -79,10 +93,11 @@
       box-shadow: 0 0 10px gold;
     }
 
-    .pay-btn {
+    .copy-btn {
       display: inline-block;
       margin: 15px 0;
-      padding: 12px 20px;
+      padding: 7px;
+      width: 100px;
       background: gold;
       color: black;
       font-weight: bold;
@@ -111,7 +126,7 @@
 
     footer a {
       color: #ffcc00;
-      text-decoration: none;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -128,22 +143,45 @@
 
   <section class="upi">
     <img src="upi.png" alt="UPI QR Code">
-    <br>
-    <a class="pay-btn" href="upi://pay?pa=alwaysharshgarg@okhdfcbank&pn=Harsh%20Garg&am=49&cu=INR">Pay ₹49 Now</a>
+    <br><br>
+    <span id="upiText" style="margin-right: 10px; font-weight: bold; color: gold;">UPI: alwaysharshgarg@hdfcbank</span>
+    <button class="copy-btn" id="copyBtn" onclick="copyUPI()">Copy ID</button>
   </section>
+
 
   <section class="instructions">
     <p><em>After payment, kindly send a screenshot of your payment<br>
-      on <a href="https://wa.me/917778000836">WhatsApp</a> or email at <a
-        href="mailto:alwaysharshgarg@gmail.com">alwaysharshgarg@gmail.com</a>.<br>
-      You will receive your ebook shortly.<br></em>
-      Happy reading! 🙂</p>
+        on <a href="https://wa.me/917778000836">WhatsApp</a> or email at <a
+          href="mailto:alwaysharshgarg@gmail.com">alwaysharshgarg@gmail.com</a>.<br>
+        You will receive your ebook shortly.<br></em>
+      <span style="color: gold;">Happy reading! 🙂</span></p>
   </section>
 
   <footer>
     <p>📞 Customer Support: <a href="tel:+917778000836">Call</a> | <a href="https://wa.me/917778000836">WhatsApp</a> |
-      <a href="mailto:alwaysharshgarg@gmail.com">Email</a></p>
+      <a href="mailto:alwaysharshgarg@gmail.com">Email</a>
+    </p>
   </footer>
+
+  <script>
+    function copyUPI() {
+      const upiID = "alwaysharshgarg@hdfcbank";
+      const btn = document.getElementById("copyBtn");
+
+      navigator.clipboard.writeText(upiID).then(() => {
+        const originalText = btn.innerText;
+        btn.innerText = "Copied ✅";
+        setTimeout(() => {
+          btn.innerText = originalText;
+        }, 2000);
+      }).catch(err => {
+        console.error("Failed to copy UPI ID:", err);
+      });
+    }
+
+  </script>
+
+
 </body>
 
 </html>
