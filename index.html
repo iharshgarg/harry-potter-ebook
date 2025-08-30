@@ -15,148 +15,155 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Buy Harry Potter eBook</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-    body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      text-align: center;
-      padding: 20px;
-    }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+  }
 
-    header {
-      margin-bottom: 30px;
-    }
+  header {
+    margin-bottom: 30px;
+  }
 
-    header h1 {
-      font-size: 2rem;
-      color: #2c3e50;
-      margin-bottom: 15px;
-    }
+  header h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
 
-    .book-img img {
-      width: 60%;
-      max-width: 300px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
+  .book-img img {
+    width: 60%;
+    max-width: 300px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    animation: pulseScale 2s infinite;
+  }
 
-    .price {
-      font-size: 2rem;
-      color: #27ae60;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
+  .price {
+    font-size: 2rem;
+    color: #27ae60;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
 
-    .price span {
-      text-decoration: line-through;
-      color: #e74c3c;
-      font-size: 1.2rem;
-      margin-right: 8px;
-    }
+  .price span {
+    text-decoration: line-through;
+    color: #e74c3c;
+    font-size: 1.2rem;
+    margin-right: 8px;
+  }
 
-    .urgency {
-      font-size: 1.1rem;
-      color: #e74c3c;
-      font-weight: bold;
-      margin-bottom: 25px;
-      animation: pulse 1.5s infinite;
-    }
+  .urgency {
+    font-size: 1.1rem;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 25px;
+    animation: pulse 1.5s infinite;
+  }
 
-    @keyframes pulse {
-      0% {
-        opacity: 1;
-      }
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
 
-      50% {
-        opacity: 0.5;
-      }
+  @keyframes pulseScale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
 
-      100% {
-        opacity: 1;
-      }
-    }
+  .book-description {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
 
-    .book-description {
-      background-color: #ffffff;
-      border-radius: 12px;
-      padding: 20px;
-      max-width: 700px;
-      margin: 0 auto 30px auto;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #555;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
+  .upi {
+    margin-bottom: 30px;
+  }
 
-    .upi {
-      margin-bottom: 30px;
-    }
+  .upi img {
+    width: 80%;
+    max-width: 350px;
+    border: 2px solid #3b82f6;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+  }
 
-    .upi img {
-      width: 80%;
-      max-width: 350px;
-      border: 2px solid #3b82f6;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: 15px;
-    }
+  .copy-btn {
+    margin-top: 14px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    animation: pulseScaleBtn 2s infinite;
+  }
 
-    .copy-btn {
-      margin-top: 14px;
-      padding: 12px 24px;
-      background: linear-gradient(135deg, #3b82f6, #2563eb);
-      color: white;
-      font-weight: 600;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 1rem;
-    }
+  .copy-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+  }
 
-    .copy-btn:hover {
-      transform: translateY(-2px);
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
-    }
+  @keyframes pulseScaleBtn {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+  }
 
-    .instructions {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 30px;
-      color: #555;
-    }
+  .instructions {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #555;
+  }
 
-    .instructions a {
-      color: #2563eb;
-      text-decoration: none;
-    }
+  .instructions a {
+    color: #2563eb;
+    text-decoration: none;
+  }
 
-    .instructions a:hover {
-      text-decoration: underline;
-    }
+  .instructions a:hover {
+    text-decoration: underline;
+  }
 
-    footer {
-      font-size: 0.9rem;
-      color: #888;
-    }
+  footer {
+    font-size: 0.9rem;
+    color: #888;
+  }
 
-    footer a {
-      color: #2563eb;
-      text-decoration: none;
-    }
+  footer a {
+    color: #2563eb;
+    text-decoration: none;
+  }
 
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  footer a:hover {
+    text-decoration: underline;
+  }
+</style>
+
 </head>
 
 <body>
@@ -185,7 +192,7 @@
     <br>
     <span id="upiText" style="font-weight: bold; color: #2c3e50;">UPI: alwaysharshgarg@okhdfcbank</span>
     <br>
-    <button class="copy-btn" id="copyBtn" onclick="copyUPI()">Copy ID</button>
+    <button class="copy-btn" id="copyBtn" onclick="copyUPI()">Copy UPI</button>
   </section>
 
   <section class="instructions">
