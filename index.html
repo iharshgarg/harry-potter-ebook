@@ -8,7 +8,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-6MFVYHCKWG');
   </script>
 
@@ -17,125 +16,126 @@
   <title>Buy Harry Potter eBook</title>
   <link rel="icon" type="image/jpeg" href="favicon.jpg">
   <style>
-    body {
+    /* Reset some default styles */
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Georgia', serif;
-      background-color: black;
-      color: #f5f5dc;
-      background-size: cover;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
       text-align: center;
-      padding: 15px;
+      padding: 20px;
     }
 
     header {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     header h1 {
-      font-size: 1.5rem;
-      color: gold;
-      text-shadow: 1px 1px 5px black;
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .book-img img {
+      width: 60%;
+      max-width: 300px;
+      border-radius: 8px;
+      margin-bottom: 20px;
     }
 
     .deal {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin: 10px 0;
-      padding: 5px 10px;
-      animation: bgChange 3s infinite;
-      border-radius: 8px;
-      box-shadow: 0 0 10px black;
       display: inline-block;
+      background-color: #e74c3c;
+      color: #fff;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
     }
 
-    @keyframes bgChange {
-      0% {
-        background-color: rgb(185, 57, 57);
-      }
-
-      25% {
-        background-color: rgb(57, 185, 57);
-      }
-
-      50% {
-        background-color: rgb(57, 57, 185);
-      }
-
-      75% {
-        background-color: rgb(185, 185, 57);
-      }
-
-      100% {
-        background-color: rgb(185, 57, 57);
-      }
+    .deal:hover {
+      transform: scale(1.05);
     }
 
     .price {
       font-size: 2rem;
-      color: rgb(97, 212, 63);
-      margin: 10px 0;
+      color: #27ae60;
       font-weight: bold;
-      text-shadow: 1px 1px 5px black;
+      margin-bottom: 30px;
     }
 
     .price span {
       text-decoration: line-through;
-      color: rgb(233, 8, 8);
-      font-size: 1.5rem;
+      color: #e74c3c;
+      font-size: 1.2rem;
       margin-right: 8px;
     }
 
-    .book-img img {
-      width: 70%;
-      max-width: 250px;
-      margin: 15px 0;
-    }
-
     .upi {
-      margin: 20px 0;
+      margin-bottom: 30px;
     }
 
     .upi img {
-      width: 60%;
+      width: 50%;
       max-width: 220px;
-      border: 3px solid gold;
+      border: 2px solid #3498db;
       border-radius: 12px;
-      box-shadow: 0 0 10px gold;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px;
     }
 
     .copy-btn {
       display: inline-block;
-      margin: 15px 0;
-      padding: 7px;
-      width: 100px;
-      background: gold;
-      color: black;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 10px;
-      box-shadow: 0 0 8px black;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .copy-btn:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
     }
 
     .instructions {
       font-size: 1rem;
-      margin-top: 20px;
-      line-height: 1.4;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #555;
     }
 
     .instructions a {
-      color: green;
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .instructions a:hover {
       text-decoration: underline;
     }
 
-
     footer {
-      margin-top: 30px;
       font-size: 0.9rem;
-      color: #ddd;
+      color: #888;
     }
 
     footer a {
-      color: #ffcc00;
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    footer a:hover {
       text-decoration: underline;
     }
   </style>
@@ -143,35 +143,29 @@
 
 <body>
   <header>
-    <h1>The Adventures of Harry Potter:<br> Guardians of the Hidden Realms</h1>
+    <h1>The Adventures of Harry Potter:<br>Guardians of the Hidden Realms</h1>
     <div class="book-img">
       <img src="book.png" alt="Ebook Cover">
     </div>
-    <div class="deal">🔥⚡️Limited Time Deal⚡️🔥<br>For First 100 Customers ⬇️</div>
+    <div class="deal">🔥 Limited Time Offer - First 100 Customers! 🔥</div>
     <div class="price"><span>₹299</span>₹49/-</div>
   </header>
 
   <section class="upi">
     <img src="upi.png" alt="UPI QR Code">
-    <br><br>
-    <span id="upiText" style="margin-right: 10px; font-weight: bold; color: gold;">UPI: alwaysharshgarg@hdfcbank</span>
+    <br>
+    <span id="upiText" style="font-weight: bold; color: #2c3e50;">UPI: alwaysharshgarg@hdfcbank</span>
+    <br>
     <button class="copy-btn" id="copyBtn" onclick="copyUPI()">Copy ID</button>
   </section>
 
-
   <section class="instructions">
-    <p><em>After payment, kindly send a screenshot of your payment<br>
-        on <a href="https://wa.me/917778000836">WhatsApp</a> or email at <a
-          href="mailto:alwaysharshgarg@gmail.com">alwaysharshgarg@gmail.com</a>.<br>
-        You will receive your ebook shortly.<br></em>
-      <span style="color: gold;">Happy reading! 🙂</span>
-    </p>
+    <p><em>After payment, kindly send a screenshot of your payment on <a href="https://wa.me/917778000836">WhatsApp</a> or email at <a href="mailto:alwaysharshgarg@gmail.com">alwaysharshgarg@gmail.com</a>. You will receive your ebook shortly.</em></p>
+    <p><strong style="color:#27ae60;">Happy reading! 🙂</strong></p>
   </section>
 
   <footer>
-    <p>📞 Customer Support: <a href="tel:+917778000836">Call</a> | <a href="https://wa.me/917778000836">WhatsApp</a> |
-      <a href="mailto:alwaysharshgarg@gmail.com">Email</a>
-    </p>
+    <p>📞 Customer Support: <a href="tel:+917778000836">Call</a> | <a href="https://wa.me/917778000836">WhatsApp</a> | <a href="mailto:alwaysharshgarg@gmail.com">Email</a></p>
   </footer>
 
   <script>
@@ -189,10 +183,7 @@
         console.error("Failed to copy UPI ID:", err);
       });
     }
-
   </script>
-
-
 </body>
 
 </html>
